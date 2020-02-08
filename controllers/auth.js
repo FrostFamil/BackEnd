@@ -11,7 +11,7 @@ exports.signup = (req, res, next) => {
     throw error;
   }
 
-  if( req.body.age < 18){
+  if( req.body.age <= 18){
     const error = new Error('Age should be bigger then 18');
     error.statusCode = 411;
     error.data = errors.array();
